@@ -3,10 +3,13 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {BackandService} from '../providers/backand-service'
+import {AnunciosPage} from '../pages/anuncios/anuncios'
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    AnunciosPage
+
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -14,7 +17,8 @@ import {BackandService} from '../providers/backand-service'
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    AnunciosPage
   ],
   providers: [BackandService,{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

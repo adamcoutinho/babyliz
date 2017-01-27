@@ -1,15 +1,37 @@
 import { Component } from '@angular/core';
-
-import { NavController } from 'ionic-angular';
-
+import {BackandService} from '../../providers/backand-service'
+import { NavController,LoadingController } from 'ionic-angular';
+import {AnunciosPage} from '../anuncios/anuncios'
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController) {
-    
+  private anuncio:any;
+  constructor(public navCtrl: NavController,public loadingController:LoadingController,public backandService:BackandService) {
+    this.anuncio ={};
+    let loader = this.loadingController.create({
+      content: "Carregando...",
+      duration: 3000
+    });
+    loader.present();
   }
+  
+
+  salvar(){
+    this.backandService.create('anuncio',this.anuncio )
+        .subscribe(
+                data => {
+                  alert("Anuncio Salvo!");
+                },
+                err => this.backandService.logError(err),
+                () => console.log('OK')
+            );
+           
+  }
+  buscarAnuncios(){
+    this.navCtrl.push(AnunciosPage);
+  }
+
 
 }

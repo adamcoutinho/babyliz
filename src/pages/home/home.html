@@ -1,14 +1,40 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+ <ion-header>
+    <ion-navbar>
+      <ion-title>Anuncio</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content>
+        
+<ion-list>
+  <ion-item>
+    <ion-label fixed>Descrição</ion-label>
+    <ion-input type="text" [(ngModel)]="anuncio.descricao" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Tamanho</ion-label>
+    <ion-input type="text" [(ngModel)]="anuncio.tamanho" ></ion-input>
+  </ion-item>
+   <ion-item>
+  <ion-label>Data Publicação</ion-label>
+  <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY" [(ngModel)]="anuncio.dataPublicacao"></ion-datetime>
+</ion-item>
+  
+  <ion-item>
+    <ion-label fixed>Preço</ion-label>
+    <ion-input type="text" [(ngModel)]="anuncio.preco" ></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label>Vendido</ion-label>
+  <ion-select [(ngModel)]="anuncio.vendido" >
+    <ion-option value="true" selected="true">Sim</ion-option>
+    <ion-option value="false">Não</ion-option>
+  </ion-select>
+</ion-item>
+<ion-item> 
+      <button ion-button clear (click)="salvar()">Salvor</button> 
+</ion-item>
+</ion-list>
 </ion-content>
+<ion-footer>
+  <button ion-button clear (click)="buscarAnuncios()">anuncios</button> 
+</ion-footer>

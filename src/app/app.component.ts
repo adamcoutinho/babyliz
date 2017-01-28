@@ -3,13 +3,13 @@ import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import {BackandService} from '../providers/backand-service'
 import { HomePage } from '../pages/home/home';
-
+import {AnunciosPage} from '../pages/anuncios/anuncios'
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = HomePage;
+  rootPage = AnunciosPage;
 
   constructor(platform: Platform , private backandService:BackandService) {
     platform.ready().then(() => {

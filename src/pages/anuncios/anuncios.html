@@ -1,18 +1,19 @@
-<!--
-  Generated template for the Anuncios page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>anuncios</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+ <ion-header>
+    <ion-navbar>
+      <ion-title>Anuncios</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content>
+<ion-card *ngFor="let anuncio of anuncios">
+  <ion-card-header>
+    {{anuncio.descricao}}
+  </ion-card-header>
+  <ion-card-content>
+    {{anuncio.preco}}
+    {{anuncio.dataPublicao}}
+    {{anuncio.vendido}}    
+  </ion-card-content>
+</ion-card>
+<ion-footer>
+  <button ion-button clear (click)="acessarCadastro()">Cadastro</button> 
+</ion-footer>

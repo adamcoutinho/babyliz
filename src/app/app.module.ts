@@ -4,11 +4,13 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {BackandService} from '../providers/backand-service'
 import {AnunciosPage} from '../pages/anuncios/anuncios'
+import {UsuarioPage} from '../pages/usuario/usuario'
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    AnunciosPage
+    AnunciosPage,
+    UsuarioPage
 
   ],
   imports: [
@@ -18,7 +20,8 @@ import {AnunciosPage} from '../pages/anuncios/anuncios'
   entryComponents: [
     MyApp,
     HomePage,
-    AnunciosPage
+    AnunciosPage,
+    UsuarioPage
   ],
   providers: [BackandService,{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

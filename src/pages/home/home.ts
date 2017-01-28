@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {BackandService} from '../../providers/backand-service'
 import { NavController,LoadingController } from 'ionic-angular';
 import {AnunciosPage} from '../anuncios/anuncios'
+import {UsuarioPage} from '../usuario/usuario'
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -29,8 +30,13 @@ export class HomePage {
             );
            
   }
+  
   buscarAnuncios(){
     this.navCtrl.push(AnunciosPage);
+  }
+
+  cadastroUsuario(){
+    this.navCtrl.push(UsuarioPage);
   }
 
 

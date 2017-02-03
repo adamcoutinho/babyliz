@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {BackandService} from '../../providers/backand-service'
+import {AnunciosPage} from '../anuncios/anuncios'
 /*
   Generated class for the Usuario page.
 
@@ -30,5 +31,9 @@ salvar(){
                 err => this.backandService.logError(err),
                 () => console.log('OK')
             );
+            this.usuario={};
 }
+  buscarAnuncios(){
+  this.navCtrl.push(AnunciosPage);
+  }
 }

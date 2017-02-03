@@ -28,7 +28,7 @@ export class HomePage {
                 err => this.backandService.logError(err),
                 () => console.log('OK')
             );
-           
+          this.anuncio = {};
   }
   
   buscarAnuncios(){

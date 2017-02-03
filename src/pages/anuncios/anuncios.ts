@@ -23,7 +23,7 @@ export class AnunciosPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AnunciosPage');
   }
-getItens(){
+  getItens(){
     let loader=this.loadingCtrl.create( // cria um objeto chamsdo loader, do tipo LoadingController
       {
         content:"Carregando dados..." // exibe a msg enquanto carrega as informações da tela
